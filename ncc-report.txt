@@ -1,0 +1,18 @@
+The fundamentals of relational databases have not changed much since they were devised; modern databases are still modeled as a collection of relations which hold records which hold real-world data, as they were when Edgar Codd defined the relational model in 1970. But the model is not enough: it assumes that, given a primary key, the database can retrieve the desired tuple without difficulty. In reality, a variety of data structures are needed to map primary keys to their values, e.g., B-trees, bitmaps, and hash indexes; not to mention the layers of layers of programming that map the tractable Structured Query Language to the primitive data structures which hold real data.
+
+The same disparity between model and implementation exists in the area of distributed databases. A formalized mathematical model of databases has no need to address concurrent access, but real databases do. The most popular web applications, for example, service millions of readers and writers around the clock. What mechanisms are in place to ensure data consistency? Can we bound their performance? Can we increase performance by accepting a little inconsistency?
+
+The answer lies in the source code. And by studying it alongside The Art of Multiprocessor Programming, students can better understand both fields, Databases and Distributing Computing, and prepare themselves for industry, where the majority of those who are hired as web developers will deal with concurrency, if only in the form of setting transaction isolation levels. But in all cases, a little understanding is better than none at all.
+
+Strategy: Cover each chapter of the textbook using MySQL source code w/ default storage engine InnoDB. Emphasis on relating to students of CSULB's CECS 327 and 323.
+1. Introduction - Adapt Alice and Bob to databases. For example, producers and consumers as threads accessing a database. Introduce ACID rules: atomicity, consistency, isolation, durability, which relate to safety/liveness concepts
+
+2. Mutual exclusion - Different locks in MySQL: table locks, row locks. 
+
+3. Concurrent objects - The alternative to mutual exclusion: MVCC (multi-version concurrency control), where each thread sees a snapshot of the table, rather than the actual table. What kind of consistency is it? Implementation?
+
+4. Foundations of shared memory. Skip. Registers are a little too low-level for databases, although I could address the C language and its way of implementing threads, pthreads.
+
+7. Spin locks - Implementation of mutexes and row-level locks, aka "latches" in MySQL. Optimizing performance by tuning polling frequency.
+
+(more to come as class progresses.)
