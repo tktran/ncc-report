@@ -1,6 +1,9 @@
+The multi-core revolution in programming has a cognate in database programming. If you asked a student who recently finished the CECS 323 course to implement their own rudimentary database, they might think they were up to the task. After all, it might just take a couple data structures--the B-trees that students think make up all indices, a hash table, string processing and checking. And it could be a very good database for that purpose indeed. But if that task is so easy, why are there so many competitors in the market, and why are they so expensive? Minor variations in SQL syntax don't explain it. What does? For one, their independently developd concurrency systems.
+
+--- spliced in this paragraph. need to transition.
 The fundamentals of relational databases have not changed much since they were devised; modern databases are still modeled as a collection of relations which hold records which hold real-world data, as they were when Edgar Codd defined the relational model in 1970. But the model is not enough: it assumes that, given a primary key, the database can retrieve the desired tuple without difficulty. In reality, a variety of data structures are needed to map primary keys to their values, e.g., B-trees, bitmaps, and hash indexes; not to mention the layers of layers of programming that map the tractable Structured Query Language to the primitive data structures which hold real data.
 
-The same disparity between model and implementation exists in the area of distributed databases. A formalized mathematical model of databases has no need to address concurrent access, but real databases do. The most popular web applications, for example, service millions of readers and writers around the clock. What mechanisms are in place to ensure data consistency? Can we bound their performance? Can we increase performance by accepting a little inconsistency?
+The same disparity between model and implementation exists in the area of distributed databases. A formalized mathematical model of databases has no need to address concurrent access, but real databases do. The most popular web applications, for example, service millions of readers and writers around the clock. In addition, some database applications are so large that they consist of several physically separated servers (discuss sharding). What mechanisms are in place to ensure data consistency? Can we bound their performance? Can we increase performance by accepting a little inconsistency?
 
 The answer lies in the source code. And by studying it alongside The Art of Multiprocessor Programming, students can better understand both fields, Databases and Distributing Computing, and prepare themselves for industry, where the majority of those who are hired as web developers will deal with concurrency, if only in the form of setting transaction isolation levels. But in all cases, a little understanding is better than none at all.
 
@@ -16,3 +19,7 @@ Strategy: Cover each chapter of the textbook using MySQL source code w/ default 
 7. Spin locks - Implementation of mutexes and row-level locks, aka "latches" in MySQL. Optimizing performance by tuning polling frequency.
 
 (more to come as class progresses.)
+
+========================= INTRODUCTION =========================================
+
+
