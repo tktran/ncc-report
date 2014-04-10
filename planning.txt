@@ -1,0 +1,38 @@
+I should actually set some goals for the paper:
+
+-for each concept covered in the multiprocessor book, link it back to MySQL
+-should it be source code or administrative? it should be administrative first, then explaining briefly (this is accomplished by a _DATA STRUCTURE_ ... blah blah)
+- should i write exercises? No - it's not a textbook, it's a freaking REPORT
+
+HERE'S MY FREAKING GOAL:
+DON'T BE ORIGINAL AT THE BEGINNING. JUST LINK CONCEPTS VERBATIM.
+DON'T WRITE ANY ENGLISH YET. JUST IDENTIFY THE FREAKING RELATED CONCEPTS.
+
+========== APRIL 10 OUTLINE ==========
+1.1 SHARED OBJECTS AND SYNCHRONIZATION
+	- heart of the problem is the prime number identification is harder than we thought
+		when there's more than one thread
+	- databases: ACID is easy with only one user; but a lot harder with multiplication:
+		then we have to use serialization parameters
+1.2 A FABLE
+	- We now present a sequence of fables, illustrating some of the basic problems.
+	- databases: we now present a series of concurrent database transactions that would
+		mess up an otherwise consistent table
+	- First fable: mutual exclusion
+		-Databases: mutual exclusion in a db! simple!
+1.3 THE PRODUCER-CONSUMER PROBLEM
+	- Alice and Bob fable on producer-consumer
+	- Alice and Bob fable on serialization? weird situations with timing
+1.4 THE READERS-WRITERS PROBLEM
+	- Readers-writers in a database
+1.5 THE HARSH REALITIES OF PARALLELIZATION
+	- Amdahl's Law
+	- Performance metrics for databases
+1.6 PARALLEL PROGRAMMING
+	- "The goal of this text is to expose the reader to core ideas behind modern 
+		coordination paradigms and concurrent data structures"
+	- "The goal of this report is to apply multiprocessor principles to databases, except
+		now the CPUs are users of the database. Also, we're using the exact same
+		terminology and telling you where it lies in MySQL
+		
+1.1 DRAFT 1
